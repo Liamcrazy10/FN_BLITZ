@@ -24,13 +24,17 @@ Intended for educational use 🎓, our aim is to highlight the vulnerability of 
 2. Ensure you've got Python installed – grab version 3.11 [HERE](https://www.python.org/downloads/release/python-3116/).
    - 🛑 Facing a `python is not recognized...` error? [WATCH THIS!](https://youtu.be/E2HvWhhAW0g)
    - 🛑 Is it a `pip is not recognized...` error? [WATCH THIS!](https://youtu.be/zWYvRS7DtOg)
-3. Fire up `PowerShell` or `Command Prompt` on Windows 🔍.
+3. Fire up `PowerShell` or `Command Prompt` on Windows in the file directory 🔍.
 4. To install `PyTorch`, select the appropriate command based on your GPU.
     - Nvidia `pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 --index-url https://download.pytorch.org/whl/cu118`
     - AMD or CPU `pip install torch torchvision torchaudio`
 5. 📦 Run the command below to install the required Open Source packages:
 ```
 pip install -r requirements.txt
+```
+
+```
+pip install utilis
 ```
 
 ## 🔌 How to Run (Fast 🏃‍♂️ Version)
