@@ -14,3 +14,4 @@ psutil
 dxcam
 onnxruntime_directml
 bettercam
+licensing
