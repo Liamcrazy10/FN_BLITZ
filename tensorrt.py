@@ -1,3 +1,5 @@
+from licensing.models import *
+from licensing.methods import Key, Helpers
 import torch
 import numpy as np
 import cv2
@@ -14,6 +16,34 @@ import cupy as cp
 # But we are writing it out for clarity for new devs
 from config import aaMovementAmp, useMask, maskHeight, maskWidth, aaQuitKey, confidence, headshot_mode, cpsDisplay, visuals, centerOfScreen, screenShotWidth
 import gameSelection
+
+RSAPubKey = "<RSAKeyValue><Modulus>tE3z+42GEq1tKWTQ3WWSMo5v2yuHDkXfjlfq2tKXy2jeG4BINufYNEZjn5F7/65q19sIpaX/FLg2lpv/o52ZgZn4Pb7PqyrusGS5Yui546TbvcwUd5shVvQHgOm8eqXalV8Vx4Ctwxv8in+j2mxq5aQx3rRIWoqGfPwQqi/IC+PHRPURpJs6lE18sCWV0vk9HBGwdRLc0Fw6VZy6HF13rhHRhJWdA4UUQUp68cLem1Fu7aL8aXNrcKF+dkPMnCbzzC+eBPSwfRaYdSkngvE7vKhnn7WuhzOxHNc3JFKTda+A5uEBwTI10goZzSUCIeBcbhB0jpMHG1QekIHX5mAuTw==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>"
+auth = "WyIxMDYzMDg3NjgiLCJLcC9JVHJHMkxwcm43VWQxdkVHemY3aXpHMWNJOW9DbHZoV1FUUW81Il0="
+
+key = input("what is your key: ")
+print (key)
+
+result = Key.activate(token=auth,\
+                   rsa_pub_key=RSAPubKey,\
+                   product_id=29582, \
+                   key=(key),\
+                   machine_code=Helpers.GetMachineCode(v=2))
+
+
+
+if result[0] ==  None or not Helpers.IsOnRightMachine(result[0], v=2):
+    # an error occurred or the key is invalid or it cannot be activated
+    # (eg. the limit of activated devices was achieved)
+    print("The license does not work: {0}".format(result[1])) 
+    quit()
+
+else:
+    # everything went fine if we are here!
+    print("The license is valid!")
+    license_key = result[0]
+    print("Feature 1: " + str(license_key.f1))
+    print("License expires: " + str(license_key.expires)) 
+    
 
 def main():
     # External Function for running the game selection menu (gameSelection.py)
@@ -113,7 +143,7 @@ def main():
                 mouseMove = [xMid - cWidth, (yMid - headshot_offset) - cHeight]
 
                 # Moving the mouse
-                if win32api.GetAsyncKeyState(win32con.VK_CAPITAL) < 0:
+                if win32api.GetAsyncKeyState(win32con.VK_RBUTTON) < 0:
                     win32api.mouse_event(win32con.MOUSEEVENTF_MOVE, int(
                         mouseMove[0] * aaMovementAmp), int(mouseMove[1] * aaMovementAmp), 0, 0)
                 last_mid_coord = [xMid, yMid]
