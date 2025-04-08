@@ -1,30 +1,17 @@
 ﻿# 🎯 World's Best AI Aimbot 🎮
 
-![World's Best AI Aimbot Banner](imgs/banner.png)
-
-[![Pull Requests Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](https://makeapullrequest.com)
-
-
-Want to make your own bot? Then use the [Starter Code Pack](https://github.com/RootKit-Org/AI-Aimbot-Starter-Code)!
---
---
 ## 🙌 Welcome Aboard!
-We're a charity on a mission to educate and certify the upcoming wave of developers in the world of Computer Engineering 🌍. Need assistance? Hop into our [Discord](https://discord.gg/rootkitorg) and toss your questions at `@Wonder` in the *#ai-aimbot channel* (be sure to stick to this channel or face the consequences! 😬). Type away your query and include `@Wonder` in there.
-
 Our *AI Aimbot* 🤖 sharpshoots targets in **any game with humanoid characters**, harnessing the power of [YOLOv5](https://github.com/ultralytics). Currently, it's a ninja against anti-cheat systems, as it's visual-only. Still, watch out for manual player reports! 👀
+
+## 📹 Instructional Media
+watch https://www.youtube.com/live/nF82tnCkbhk for a quick and easy tutorial
 
 Intended for educational use 🎓, our aim is to highlight the vulnerability of game devs to AI-driven cheats. Pass it along to your game developer buddies, and save their games from being outsmarted!
 
 **⚠ Use at your own risk! If you're caught... well, you've been warned!**
 
-## 📹 Instructional Media
-- [Watch the tutorial video (Works But Outdated)](https://www.youtube.com/watch?v=TCJHLbbeLhg)
-- [Watch the live stream explainer (Works But Outdated)](https://www.youtube.com/watch?v=uniL5yR7y0M&ab_channel=RootKit)
-- [Join the Discord](https://discord.gg/rootkitorg)
-
-## There are 3 Versions 🚀🚦🖥️
+## There are 2 Versions 🚀🚦🖥️
 - Fast 🏃‍♂️ - `main.py` ✅ Easy to set up, Works on any computer 💻
-- Faster 🏃‍♂️💨 - `main_onnx.py` ⚙️ May need to edit a file, Works on any computer 💻
 - Fastest 🚀 - `main_tensorrt.py` 🏢 Enterprise level hard, Works on computers with Nvidia GPUs only 🎮
 
 ## 🧰 Requirements
@@ -34,7 +21,7 @@ Intended for educational use 🎓, our aim is to highlight the vulnerability of 
 
 ## 🚀 Pre-setup Steps
 1. Download and Unzip the AI Aimbot and stash the folder somewhere handy 🗂️.
-2. Ensure you've got Python installed (like a pet python 🐍) – grab version 3.11 [HERE](https://www.python.org/downloads/release/python-3116/).
+2. Ensure you've got Python installed – grab version 3.11 [HERE](https://www.python.org/downloads/release/python-3116/).
    - 🛑 Facing a `python is not recognized...` error? [WATCH THIS!](https://youtu.be/E2HvWhhAW0g)
    - 🛑 Is it a `pip is not recognized...` error? [WATCH THIS!](https://youtu.be/zWYvRS7DtOg)
 3. Fire up `PowerShell` or `Command Prompt` on Windows 🔍.
@@ -59,17 +46,14 @@ Follow these steps **after** Python and all packages have been installed:
 ## 🔌 How to Run (Faster 🏃‍♂️💨 Version)
 Follow these steps **after** Python and all packages have been installed:
 
-1. Open the `config.py` 📄 file and tweak the `onnxChoice` variable to correspond with your hardware specs:
-    - `onnxChoice = 1` # CPU ONLY 🖥
-    - `onnxChoice = 2` # AMD/NVIDIA ONLY 🎮
-    - `onnxChoice = 3` # NVIDIA ONLY 🏎️
-2. IF you have an NVIDIA set up, run the following
+for nvidia cards run: 
+
     ```
     pip install onnxruntime-gpu
     pip install cupy-cuda11x
     ```
-2. Follow the same steps as for the Fast 🏃‍♂️ Version above except for step 4, you will run `python main_onnx.py` instead.
 
+before doing anything more
 
 ## 🔌 How to Run (Fastest 🚀 Version)
 Follow these sparkly steps to get your TensorRT ready for action! 🛠️✨
@@ -81,7 +65,7 @@ Follow these sparkly steps to get your TensorRT ready for action! 🛠️✨
    We forgot to mention adding environmental variable paths in the video. Make sure to do this part!
 
 3. **Get Support If You're Stumped** 🤔
-   If you ever feel lost, you can always `@Wonder` your questions in our [Discord 💬](https://discord.gg/rootkitorg). Wonder is here to help!
+   If you ever feel lost, dm me on discord
 
 4. **Install Cupy**
     Run the following `pip install cupy-cuda11x`
@@ -185,7 +169,7 @@ Show off your work or new models via Pull Requests in `customScripts` or `custom
 
 ## 🌠 Future Ideas
 
- - [x] Mask Player to avoid false positives
+ - [x] Make the menu look nicer
 
 
 Happy Coding and Aiming! 🎉👾
