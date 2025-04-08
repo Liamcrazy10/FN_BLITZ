@@ -113,7 +113,7 @@ def main():
                 mouseMove = [xMid - cWidth, (yMid - headshot_offset) - cHeight]
 
                 # Moving the mouse
-                if win32api.GetAsyncKeyState(win32con.VK_RBUTTON) < 0:
+                if win32api.GetAsyncKeyState(win32con.VK_CAPITAL) < 0:
                     win32api.mouse_event(win32con.MOUSEEVENTF_MOVE, int(
                         mouseMove[0] * aaMovementAmp), int(mouseMove[1] * aaMovementAmp), 0, 0)
                 last_mid_coord = [xMid, yMid]
