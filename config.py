@@ -1,3 +1,6 @@
+import os
+import time
+
 # Portion of screen to be captured (This forms a square/rectangle around the center of screen)
 screenShotHeight = 320
 screenShotWidth = 320
@@ -9,24 +12,55 @@ maskWidth = 80
 maskHeight = 200
 
 # Autoaim mouse movement amplifier
+os.system('cls' if os.name == 'nt' else 'clear')
 
-data = input("how much Movement speed would you like, (normal is 0.4): ")
-print (data)
+while True:
+    data = input("How much movement speed would you like? (normal is 0.4): ").strip()
 
-aaMovementAmp = (data)
+    try:
+        speed = float(data)
+    except ValueError:
+        print("Invalid number. Please retry.")
+        continue
+
+    # Scale to work with ints internally (0.4 -> 4)
+    speed_int = int(speed * 10)
+
+    allowed_speeds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+    if speed_int in allowed_speeds:
+        print("Changing config...")
+        break
+    else:
+        print("Invalid number. Please retry.")
+
+aaMovementAmp = speed_int
 
 # Person Class Confidence
+os.system('cls' if os.name == 'nt' else 'clear')
+
 confidence = 0.1
 
 # What key to press to quit and shutdown the autoaim
-
-quitkey = input("what key do you want to quit the cheat on: ")
-
-aaQuitKey = (quitkey)
+os.system('cls' if os.name == 'nt' else 'clear')
+# Change q To Change What Button To Close The Hack With
+aaQuitKey = "q"
 
 # If you want to main slightly upwards towards the head
+os.system('cls' if os.name == 'nt' else 'clear')
+while True:
+    headshot = input("headshot mode preference (True/False): ")
 
-headshot = input("do you want to have headshot mode on? True/False: ")
+    if headshot == 'true':
+        headshot_mode = True
+        print("Headshot mode enabled.")
+        break
+    elif data == 'false':
+        headshot_mode = False
+        print("Headshot mode disabled.")
+        break
+    else:
+        print("Invalid input. Please enter 'True' or 'False'.")
 
 headshot_mode = (headshot)
 
