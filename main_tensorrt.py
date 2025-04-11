@@ -14,13 +14,13 @@ import cupy as cp
 # Could be do with
 # from config import *
 # But we are writing it out for clarity for new devs
-from config import aaMovementAmp, useMask, maskHeight, maskWidth, aaQuitKey, confidence, headshot_mode, cpsDisplay, visuals, centerOfScreen, screenShotWidth
+from config import aaMovementAmp, data, headshot, useMask, maskHeight, maskWidth, aaQuitKey, confidence, headshot_mode, cpsDisplay, visuals, centerOfScreen, screenShotWidth
 import gameSelection
 
 RSAPubKey = "<RSAKeyValue><Modulus>tE3z+42GEq1tKWTQ3WWSMo5v2yuHDkXfjlfq2tKXy2jeG4BINufYNEZjn5F7/65q19sIpaX/FLg2lpv/o52ZgZn4Pb7PqyrusGS5Yui546TbvcwUd5shVvQHgOm8eqXalV8Vx4Ctwxv8in+j2mxq5aQx3rRIWoqGfPwQqi/IC+PHRPURpJs6lE18sCWV0vk9HBGwdRLc0Fw6VZy6HF13rhHRhJWdA4UUQUp68cLem1Fu7aL8aXNrcKF+dkPMnCbzzC+eBPSwfRaYdSkngvE7vKhnn7WuhzOxHNc3JFKTda+A5uEBwTI10goZzSUCIeBcbhB0jpMHG1QekIHX5mAuTw==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>"
 auth = "WyIxMDYzMDg3NjgiLCJLcC9JVHJHMkxwcm43VWQxdkVHemY3aXpHMWNJOW9DbHZoV1FUUW81Il0="
 
-key = input("what is your Hack key: ")
+key = input("what is your key: ")
 print (key)
 
 result = Key.activate(token=auth,\
@@ -201,4 +201,3 @@ if __name__ == "__main__":
         import traceback
         traceback.print_exception(e)
         print("ERROR: " + str(e))
-        print("Ask @Wonder for help in our Discord in the #ai-aimbot channel ONLY: https://discord.gg/rootkitorg")
