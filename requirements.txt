@@ -1,7 +1,7 @@
 PyAutoGUI
 PyGetWindow
 opencv-python
-numpy==2.1.1
+numpy==1.21.0
 pandas
 pywin32
 pyyaml
